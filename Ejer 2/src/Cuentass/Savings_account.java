@@ -1,14 +1,14 @@
 package Cuentass;
 
-public class savings_account extends Account{
+public class Savings_account extends Account{
     private boolean active;
 
-    public savings_account(float balance, float annual_rate) {
+    public Savings_account(float balance, float annual_rate) {
         super(balance, annual_rate);
         this.active= balance > 10000;
     }
 
-    public boolean isActive() {
+    public boolean getActive() {
         return active;
     }
 
@@ -43,6 +43,8 @@ public class savings_account extends Account{
     public void to_sprint(){
         System.out.println("Saldo actual= "+this.getBalance());
         System.out.println("comision mensual: "+this.getMonthly_fee());
-        System.out.println("Numero de transacciones: "+this.getNumber_of_deposit()+this.getNumber_of_withdrawals());
+        int n=this.getNumber_of_deposit()+this.getNumber_of_withdrawals();
+        System.out.println("Numero de transacciones: "+n);
+
     }
 }

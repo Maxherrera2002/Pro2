@@ -36,7 +36,7 @@ public class Account {
     }
 
     public void setNumber_of_withdrawals(int number_of_withdrawals) {
-        this.number_of_withdrawals = number_of_withdrawals;
+        this.number_of_withdrawals += number_of_withdrawals;
     }
 
     public float getAnnual_rate() {
@@ -58,11 +58,13 @@ public class Account {
 
     public void to_deposit(float amount){
         this.balance+=amount;
+        this.number_of_deposit+=1;
     }
 
     public void to_withdraw(float amount){
         if (amount<=this.balance){
             this.balance-=amount;
+            this.setNumber_of_withdrawals(1);
         }else{
             System.out.println("No tiene dinero suficiente, su saldo es de: "+this.balance);
         }
